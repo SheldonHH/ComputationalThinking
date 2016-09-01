@@ -6,6 +6,7 @@ public class Bubblesort {
       int numbers []= sorting(origins);
       System.out.println(Arrays.toString(numbers));
   }
+  
 public  static int[] sorting(int [] origins){
      int temp=0;
     for(int i=0;i<origins.length-1;i++){
