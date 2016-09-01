@@ -2,9 +2,9 @@ import java.util.Arrays;
 
 /**
 *
-* @param numbers 带排序数组
-* @param low  开始位置
-* @param high 结束位置
+* @param numbers sorted arrats
+* @param low  starting position
+* @param high ending position
 */
 
 public class Quicksort{
@@ -19,14 +19,14 @@ public class Quicksort{
                 while (low < high && list[high] >= pivot) {
                     high--;
                 }
-                list[low] = list[high];   //比中轴小的记录移到低端
+                list[low] = list[high];   //move the numbers that smaller than the pivot to the left
                 while (low < high && list[low] <= pivot) {
                     low++;
                 }
-                list[high] = list[low];   //比中轴大的记录移到高端
+                list[high] = list[low];   ///move the numbers that bigger than the pivot to the right
             }
-           list[low] = pivot;              //中轴记录到尾
-            return low;                   //返回中轴的位置
+           list[low] = pivot;             
+            return low;                   //return the position of the pivot
         }
   public static void sorting(int[] numbers,int low,int high)
   {
@@ -39,7 +39,7 @@ public class Quicksort{
 
   }
   public static void quick(int[] numbers) {
-              if ( numbers.length > 0) {    //查看数组是否为空
+              if ( numbers.length > 0) {    //查check wheteher the numbers array reach empty
                   sorting(numbers, 0, numbers.length - 1);
           }
   }
