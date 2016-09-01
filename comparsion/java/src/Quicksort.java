@@ -8,11 +8,7 @@ import java.util.Arrays;
 */
 
 public class Quicksort{
-  public static void main(String []args){
-    int [] a={49,38,65,97,76,13,27,49,78,34,12,64,5,4,62,99,98,54,56,17,18,23,34,15,35,25,53,51};
-    quick(a);
-    System.out.println(Arrays.toString(a));
-  }
+
     public static int getMiddle(int[] list, int low, int high) {
             int pivot = list[low];    //set the first number as pivot
             while (low < high) {
@@ -25,10 +21,10 @@ public class Quicksort{
                 }
                 list[high] = list[low];   ///move the numbers that bigger than the pivot to the right
             }
-           list[low] = pivot;             
+           list[low] = pivot;
             return low;                   //return the position of the pivot
         }
-  public static void sorting(int[] numbers,int low,int high)
+  public static int [] sorting(int[] numbers,int low,int high)
   {
      if(low < high)
      {
@@ -36,11 +32,17 @@ public class Quicksort{
          sorting(numbers, low, middle-1);// recursively sort for smaller number
          sorting(numbers, middle+1, high); // recursively sort for larger number
      }
+     return numbers;
 
   }
-  public static void quick(int[] numbers) {
-              if ( numbers.length > 0) {    //check wheteher the numbers array reach empty
-                  sorting(numbers, 0, numbers.length - 1);
-          }
+  public static void main(String []args){
+
+    int [] numbers ={49,38,65,97,76,13,27,49,78,34,12,64,5,4,62,99,98,54,56,17,18,23,34,15,35,25,53,51};
+    if (numbers != null && numbers.length > 0) {    //check wheteher the numbers array reach empty
+        int [] afterSorted = sorting(numbers, 0, numbers.length - 1);
+    }else{
+      System.out.println("Invalid input arrays");
+    }
+
   }
 }
