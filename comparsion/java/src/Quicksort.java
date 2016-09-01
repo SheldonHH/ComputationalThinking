@@ -39,7 +39,7 @@ public class Quicksort{
 
   }
   public static void quick(int[] numbers) {
-              if ( numbers.length > 0) {    //查check wheteher the numbers array reach empty
+              if ( numbers.length > 0) {    //check wheteher the numbers array reach empty
                   sorting(numbers, 0, numbers.length - 1);
           }
   }
